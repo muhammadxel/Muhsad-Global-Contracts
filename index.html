@@ -11,16 +11,17 @@
 
   <style>
     :root {
-      --primary-dark: #000000;
+      --bg-body: #070d09;
+      --bg-card: #0d1a12;
+      --bg-card-hover: #122419;
+      --border-dark: #1b3524;
       --primary-green: #1b4329;
-      --green-dark: #13331f;
-      --green-light: #265e3a;
+      --brand-green-bright: #2d6e44;
       --accent-gold: #c5a059;
-      --text-dark: #1a1a1a;
-      --text-muted: #5f6368;
-      --bg-light: #f8faf8;
-      --bg-card: #ffffff;
-      --border-color: #e5eae6;
+      --accent-gold-hover: #dcb36d;
+      --text-white: #f1f5f3;
+      --text-muted: #9db1a4;
+      --border-subtle: rgba(197, 160, 89, 0.25);
     }
 
     * {
@@ -35,30 +36,31 @@
 
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text-dark);
-      background-color: var(--bg-light);
+      color: var(--text-white);
+      background-color: var(--bg-body);
       line-height: 1.6;
     }
 
     /* Top Strip */
     .top-bar {
-      background-color: var(--green-dark);
-      color: #e9f5ed;
-      padding: 8px 5%;
+      background-color: #040805;
+      color: var(--text-muted);
+      padding: 10px 5%;
       font-size: 13px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid var(--border-dark);
     }
     .top-bar a {
-      color: #ffffff;
+      color: var(--text-muted);
       text-decoration: none;
       margin-left: 18px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      transition: color 0.2s ease;
     }
     .top-bar a:hover {
       color: var(--accent-gold);
@@ -69,18 +71,19 @@
       color: var(--accent-gold);
     }
 
-    /* Main Navigation */
+    /* Navigation */
     header {
-      background-color: #ffffff;
+      background-color: rgba(7, 13, 9, 0.95);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-dark);
     }
     .nav-container {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 12px 24px;
+      padding: 14px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -105,13 +108,13 @@
       font-size: 19px;
       font-weight: 800;
       letter-spacing: 1px;
-      color: #000000;
+      color: #ffffff;
       line-height: 1.1;
     }
     .brand-name .name-sub {
       font-size: 11px;
       letter-spacing: 0.8px;
-      color: var(--primary-green);
+      color: var(--accent-gold);
       font-weight: 700;
     }
 
@@ -123,75 +126,95 @@
     }
     .nav-links a {
       text-decoration: none;
-      color: #2b3034;
+      color: var(--text-muted);
       font-weight: 600;
       font-size: 14.5px;
       transition: color 0.2s ease;
     }
     .nav-links a:hover {
-      color: var(--primary-green);
+      color: var(--accent-gold);
     }
 
-    /* Company Profile Single Download Button */
+    /* Single Download Profile Button */
     .btn-download-profile {
-      background-color: var(--primary-green);
-      color: #ffffff !important;
-      padding: 10px 18px;
+      background: linear-gradient(135deg, var(--accent-gold), #a5813e);
+      color: #070d09 !important;
+      padding: 9px 18px;
       border-radius: 6px;
       font-size: 13.5px;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      border: 1px solid var(--green-light);
-      box-shadow: 0 4px 10px rgba(27, 67, 41, 0.25);
+      box-shadow: 0 4px 14px rgba(197, 160, 89, 0.2);
       transition: all 0.3s ease;
+      border: none;
     }
     .btn-download-profile:hover {
-      background-color: var(--green-dark);
+      background: linear-gradient(135deg, var(--accent-gold-hover), var(--accent-gold));
       transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(27, 67, 41, 0.35);
+      box-shadow: 0 6px 18px rgba(197, 160, 89, 0.35);
     }
 
-    /* Hero Section */
+    /* Motto / Tagline strip */
+    .tagline-strip {
+      background: linear-gradient(90deg, #09170e, var(--primary-green), #09170e);
+      color: var(--accent-gold);
+      text-align: center;
+      padding: 10px 20px;
+      font-weight: 600;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.8px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    /* Hero Section with dark multi-layer overlay for crystal-clear readability */
     .hero {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(19, 51, 31, 0.88)), 
-                  url('https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=1900&q=80') center/cover no-repeat;
-      color: #ffffff;
-      padding: 110px 24px;
+      position: relative;
+      background: 
+        linear-gradient(180deg, rgba(7, 13, 9, 0.75) 0%, rgba(7, 13, 9, 0.92) 80%, var(--bg-body) 100%),
+        linear-gradient(90deg, rgba(27, 67, 41, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%),
+        url('https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 130px 24px 100px;
       text-align: center;
     }
     .hero-content {
       max-width: 900px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
     .hero-tag {
       display: inline-block;
-      background: rgba(197, 160, 89, 0.2);
+      background: rgba(27, 67, 41, 0.4);
       border: 1px solid var(--accent-gold);
-      color: #f7d58b;
+      color: var(--accent-gold);
       padding: 6px 16px;
       border-radius: 50px;
       font-size: 12.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     .hero h1 {
       font-family: 'Cinzel', serif;
-      font-size: 42px;
+      font-size: 44px;
       line-height: 1.25;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       letter-spacing: 0.5px;
+      color: #ffffff;
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
     }
     .hero p {
       font-size: 18px;
-      color: #e2ede4;
+      color: var(--text-muted);
       line-height: 1.7;
       max-width: 780px;
-      margin: 0 auto 34px;
+      margin: 0 auto 36px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
     }
     .hero-buttons {
       display: flex;
@@ -199,78 +222,67 @@
       gap: 16px;
       flex-wrap: wrap;
     }
-    .btn-primary {
-      background-color: var(--accent-gold);
-      color: #000000;
+    .btn-gold {
+      background: var(--accent-gold);
+      color: #070d09;
       padding: 13px 28px;
       font-weight: 700;
       border-radius: 6px;
       text-decoration: none;
       transition: 0.3s;
     }
-    .btn-primary:hover {
-      background-color: #d8b46e;
+    .btn-gold:hover {
+      background: var(--accent-gold-hover);
     }
-    .btn-outline {
-      border: 2px solid #ffffff;
-      color: #ffffff;
+    .btn-dark-outline {
+      border: 1.5px solid var(--brand-green-bright);
+      color: var(--text-white);
       padding: 11px 26px;
       font-weight: 600;
       border-radius: 6px;
       text-decoration: none;
+      background: rgba(27, 67, 41, 0.2);
       transition: 0.3s;
     }
-    .btn-outline:hover {
-      background-color: #ffffff;
-      color: #000000;
-    }
-
-    /* Sub-bar Tagline */
-    .tagline-strip {
-      background-color: var(--primary-green);
-      color: #ffffff;
-      text-align: center;
-      padding: 12px 20px;
-      font-weight: 600;
-      font-style: italic;
-      font-size: 14.5px;
-      letter-spacing: 0.5px;
+    .btn-dark-outline:hover {
+      background: var(--primary-green);
+      border-color: var(--accent-gold);
     }
 
     /* Section Global Styles */
     section {
-      padding: 85px 24px;
+      padding: 90px 24px;
       max-width: 1240px;
       margin: 0 auto;
     }
     .section-header {
       text-align: center;
-      max-width: 720px;
-      margin: 0 auto 55px;
+      max-width: 740px;
+      margin: 0 auto 60px;
     }
     .section-subtitle {
       font-size: 13px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--primary-green);
+      color: var(--accent-gold);
       margin-bottom: 8px;
       display: block;
     }
     .section-title {
       font-family: 'Cinzel', serif;
-      font-size: 32px;
-      color: var(--primary-dark);
+      font-size: 34px;
+      color: #ffffff;
       font-weight: 700;
       line-height: 1.3;
     }
     .section-desc {
       color: var(--text-muted);
-      margin-top: 12px;
-      font-size: 15.5px;
+      margin-top: 14px;
+      font-size: 16px;
     }
 
-    /* Core Services Grid with Photos */
+    /* Core Services Grid with Valid High-Res Photos */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -280,20 +292,22 @@
       background: var(--bg-card);
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--border-color);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border-dark);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
     }
     .service-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-      border-color: var(--primary-green);
+      border-color: var(--accent-gold);
+      box-shadow: 0 12px 30px rgba(27, 67, 41, 0.25);
+      background: var(--bg-card-hover);
     }
     .service-img-wrapper {
       position: relative;
       height: 220px;
       overflow: hidden;
+      background-color: #050a06;
     }
     .service-img-wrapper img {
       width: 100%;
@@ -302,29 +316,29 @@
       transition: transform 0.4s ease;
     }
     .service-card:hover .service-img-wrapper img {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
     .service-num {
       position: absolute;
       top: 14px;
       right: 14px;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(7, 13, 9, 0.85);
       color: var(--accent-gold);
       font-weight: 800;
       font-size: 13px;
       padding: 4px 10px;
       border-radius: 4px;
-      border: 1px solid var(--accent-gold);
+      border: 1px solid var(--border-subtle);
     }
     .service-body {
-      padding: 24px;
+      padding: 26px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
     }
     .service-body h3 {
       font-size: 20px;
-      color: var(--primary-green);
+      color: #ffffff;
       margin-bottom: 12px;
       font-weight: 700;
     }
@@ -332,28 +346,28 @@
       color: var(--text-muted);
       font-size: 14.5px;
       line-height: 1.6;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
     .service-list {
       list-style: none;
       margin-top: auto;
-      border-top: 1px solid var(--border-color);
-      padding-top: 14px;
+      border-top: 1px solid var(--border-dark);
+      padding-top: 16px;
     }
     .service-list li {
       font-size: 13.5px;
-      color: #3e4448;
-      margin-bottom: 6px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
     .service-list li i {
-      color: var(--primary-green);
-      font-size: 12px;
+      color: var(--accent-gold);
+      font-size: 13px;
     }
 
-    /* About & Credentials */
+    /* About & Credentials in Dark Mode */
     .about-wrap {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -361,148 +375,195 @@
       align-items: center;
     }
     .about-text h3 {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 18px;
-      color: var(--primary-dark);
+      color: #ffffff;
       font-family: 'Cinzel', serif;
     }
     .about-text p {
       color: var(--text-muted);
       margin-bottom: 16px;
       font-size: 15px;
+      line-height: 1.7;
     }
     .credentials-box {
-      background: #ffffff;
+      background: var(--bg-card);
       border-radius: 12px;
-      padding: 32px;
-      border-left: 6px solid var(--primary-green);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-      border-top: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
+      padding: 34px;
+      border-left: 5px solid var(--accent-gold);
+      border-top: 1px solid var(--border-dark);
+      border-right: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
     }
     .cred-item {
       display: flex;
-      gap: 16px;
-      margin-bottom: 22px;
+      gap: 18px;
+      margin-bottom: 24px;
     }
     .cred-item:last-child {
       margin-bottom: 0;
     }
     .cred-icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(27, 67, 41, 0.1);
+      width: 46px;
+      height: 46px;
+      background: rgba(27, 67, 41, 0.4);
+      border: 1px solid var(--border-subtle);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary-green);
-      font-size: 19px;
+      color: var(--accent-gold);
+      font-size: 20px;
       flex-shrink: 0;
     }
     .cred-info h4 {
       font-size: 15px;
       font-weight: 700;
-      color: var(--primary-dark);
+      color: #ffffff;
     }
     .cred-info p {
       font-size: 13.5px;
       color: var(--text-muted);
-      margin: 2px 0 0 0;
+      margin-top: 3px;
     }
 
-    /* Management Team */
+    /* Professional Management Team with Person Icons */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 28px;
     }
     .team-card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 30px 24px;
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 34px 24px;
       text-align: center;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+      border: 1px solid var(--border-dark);
+      transition: all 0.3s ease;
     }
-    .team-avatar {
-      width: 80px;
-      height: 80px;
+    .team-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-5px);
+      background: var(--bg-card-hover);
+    }
+    .team-avatar-icon {
+      width: 76px;
+      height: 76px;
       border-radius: 50%;
-      background: var(--primary-green);
+      background: linear-gradient(135deg, #09170e, var(--primary-green));
       color: var(--accent-gold);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
-      font-weight: 800;
+      font-size: 32px;
       margin: 0 auto 18px;
-      border: 3px solid #e7eee9;
+      border: 2px solid var(--border-subtle);
     }
     .team-card h4 {
       font-size: 18px;
-      color: var(--primary-dark);
+      color: #ffffff;
       font-weight: 700;
     }
     .team-role {
       font-size: 13px;
-      color: var(--primary-green);
+      color: var(--accent-gold);
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin: 6px 0 14px;
+      letter-spacing: 0.8px;
+      margin: 8px 0 14px;
     }
     .team-card p {
       font-size: 13.5px;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    /* Contact & Location Strip */
+    /* Contact Section */
     .contact-section {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 45px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      border: 1px solid var(--border-dark);
+      border-radius: 14px;
+      padding: 48px;
     }
     .contact-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 45px;
     }
     .contact-details h3 {
       font-family: 'Cinzel', serif;
-      font-size: 24px;
+      font-size: 26px;
       margin-bottom: 20px;
-      color: var(--primary-dark);
+      color: #ffffff;
     }
     .contact-info-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 18px;
     }
     .contact-info-list li {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
+      gap: 15px;
       font-size: 14.5px;
-      color: #333;
+      color: var(--text-muted);
+    }
+    .contact-info-list strong {
+      color: #ffffff;
     }
     .contact-info-list i {
-      color: var(--primary-green);
+      color: var(--accent-gold);
       font-size: 18px;
       margin-top: 3px;
+    }
+    .contact-form-box {
+      background: #09140d;
+      padding: 32px;
+      border-radius: 10px;
+      border: 1px solid var(--border-dark);
+    }
+    .contact-form-box h4 {
+      margin-bottom: 16px;
+      color: var(--accent-gold);
+      font-size: 17px;
+    }
+    .form-input {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      background: #040805;
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+    }
+    .btn-submit {
+      background: var(--accent-gold);
+      color: #070d09;
+      border: none;
+      padding: 13px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover {
+      background: var(--accent-gold-hover);
     }
 
     /* Footer */
     footer {
-      background-color: #0b1a11;
-      color: #cbd5e1;
-      padding: 60px 24px 25px;
-      border-top: 4px solid var(--primary-green);
+      background-color: #030604;
+      color: #718277;
+      padding: 65px 24px 25px;
+      border-top: 2px solid var(--border-dark);
     }
     .footer-container {
       max-width: 1240px;
@@ -511,7 +572,7 @@
       grid-template-columns: 2fr 1fr 1fr;
       gap: 45px;
       padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid var(--border-dark);
     }
     .footer-col h5 {
       color: #ffffff;
@@ -532,17 +593,17 @@
     .footer-col p {
       font-size: 13.5px;
       line-height: 1.6;
-      color: #94a3b8;
+      color: var(--text-muted);
     }
     .footer-col ul {
       list-style: none;
     }
     .footer-col ul li {
-      margin-bottom: 8px;
+      margin-bottom: 9px;
       font-size: 13.5px;
     }
     .footer-col ul li a {
-      color: #94a3b8;
+      color: var(--text-muted);
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -556,7 +617,7 @@
       justify-content: space-between;
       align-items: center;
       font-size: 12.5px;
-      color: #64748b;
+      color: #55665b;
       flex-wrap: wrap;
       gap: 12px;
     }
@@ -590,7 +651,7 @@
     </div>
   </div>
 
-  <!-- Main Navigation -->
+  <!-- Main Navigation Bar -->
   <header>
     <div class="nav-container">
       <a href="#" class="brand-logo">
@@ -608,7 +669,7 @@
           <li><a href="#leadership">Leadership</a></li>
           <li><a href="#credentials">Compliance</a></li>
           <li><a href="#contact">Contact</a></li>
-          <!-- Single Company Profile Download Button -->
+          <!-- Single Company Profile Download Action -->
           <li>
             <a href="MUHSAD PROFILE 2026.pdf" download class="btn-download-profile">
               <i class="fa fa-file-pdf"></i> Download Profile (PDF)
@@ -619,24 +680,24 @@
     </div>
   </header>
 
-  <!-- Tagline Banner -->
+  <!-- Letterhead Tagline Strip -->
   <div class="tagline-strip">
     "Wise contracting, lasting Value..."
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Building Construction Architecture & Contrast Mask -->
   <section class="hero" style="max-width: 100%; width: 100%;">
     <div class="hero-content">
       <span class="hero-tag">Excellence in Execution</span>
-      <h1>General Contracting, Engineering & Supply Solutions</h1>
+      <h1>General Contracting, Civil Engineering & Supply Solutions</h1>
       <p>
-        MUHSAD GLOBAL CONTRACTS LIMITED is positioned to provide practical, reliable, 
-        and professionally managed solutions across construction, civil infrastructure, 
-        ICT supply, and property development in Nigeria.
+        MUHSAD GLOBAL CONTRACTS LIMITED provides dependable, practical, 
+        and professionally managed solutions across infrastructure, commercial development, 
+        ICT supply, and property management in Nigeria.
       </p>
       <div class="hero-buttons">
-        <a href="#services" class="btn-primary">Explore Our Services</a>
-        <a href="#contact" class="btn-outline">Get in Touch</a>
+        <a href="#services" class="btn-gold">Explore Core Services</a>
+        <a href="#contact" class="btn-dark-outline">Inquire Today</a>
       </div>
     </div>
   </section>
@@ -645,40 +706,40 @@
   <section id="about">
     <div class="about-wrap">
       <div class="about-text">
-        <span class="section-subtitle">About Our Company</span>
+        <span class="section-subtitle">About Our Enterprise</span>
         <h3>Delivering Projects that Meet Agreed Standards and Expectations</h3>
         <p>
-          MUHSAD GLOBAL CONTRACTS LIMITED is a Nigerian limited liability company incorporated under 
-          the Companies and Allied Matters Act. We operate across civil engineering, building development, 
+          MUHSAD GLOBAL CONTRACTS LIMITED is an indigenous Nigerian limited liability company incorporated 
+          under the Companies and Allied Matters Act. We operate across civil engineering, building development, 
           project planning, renovation, and logistics services.
         </p>
         <p>
-          Our operations are guided by a commitment to quality workmanship, cost consciousness, 
-          responsible resource management, and long-term value creation for private and public sector partners.
+          Our operations are guided by a commitment to quality workmanship, strict cost discipline, 
+          responsible resource coordination, and sustainable value creation for private and public sector partners.
         </p>
       </div>
 
-      <div class="credentials-box">
-        <h4 style="margin-bottom: 20px; font-family: 'Cinzel', serif; font-size: 19px; color: var(--primary-green);">Corporate Overview</h4>
+      <div class="credentials-box" id="credentials">
+        <h4 style="margin-bottom: 20px; font-family: 'Cinzel', serif; font-size: 19px; color: var(--accent-gold);">Corporate Registrations</h4>
         <div class="cred-item">
-          <div class="cred-icon"><i class="fa fa-id-card"></i></div>
+          <div class="cred-icon"><i class="fa fa-stamp"></i></div>
           <div class="cred-info">
-            <h4>Registration (CAC)</h4>
-            <p>RC Number: 8623249 (Incorporated 22nd July, 2025)</p>
+            <h4>CAC Incorporation</h4>
+            <p>RC Number: 8623249 (Certified Limited Liability Company)</p>
           </div>
         </div>
         <div class="cred-item">
           <div class="cred-icon"><i class="fa fa-file-invoice-dollar"></i></div>
           <div class="cred-info">
             <h4>Federal Tax Compliance (FIRS)</h4>
-            <p>TIN: 33361451-0001 | TCC NO: 226107228270</p>
+            <p>TIN: 33361451-0001 | Tax Clearance TCC: 226107228270</p>
           </div>
         </div>
         <div class="cred-item">
           <div class="cred-icon"><i class="fa fa-shield-halved"></i></div>
           <div class="cred-info">
-            <h4>SCUML / Anti-Money Laundering</h4>
-            <p>Registration No: RN: SC 191605915 (EFCC/SCUML)</p>
+            <h4>SCUML / AML Certified</h4>
+            <p>Registration No: RN: SC 191605915 (Money Laundering Act 2022)</p>
           </div>
         </div>
       </div>
@@ -686,33 +747,33 @@
   </section>
 
   <!-- Core Services with High-Resolution Photos -->
-  <section id="services" style="background-color: #f1f6f2; max-width: 100%; width: 100%;">
+  <section id="services" style="background-color: #050a06; max-width: 100%; width: 100%;">
     <div style="max-width: 1240px; margin: 0 auto;">
       <div class="section-header">
-        <span class="section-subtitle">What We Do</span>
+        <span class="section-subtitle">Integrated Capabilities</span>
         <h2 class="section-title">Our Core Services</h2>
         <p class="section-desc">Practical, reliable, and integrated operational capabilities across construction, engineering, supply, and management.</p>
       </div>
 
       <div class="services-grid">
-        <!-- Service 1 -->
+        <!-- Service 1: Construction Services (Updated Valid Image URL) -->
         <div class="service-card">
           <div class="service-img-wrapper">
             <span class="service-num">01</span>
-            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=800&q=80" alt="Construction Services">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Construction Services">
           </div>
           <div class="service-body">
             <h3>Construction Services</h3>
-            <p>General construction solutions for residential, commercial, and institutional projects with complete site coordination.</p>
+            <p>General construction solutions for residential, commercial, and institutional projects with complete site supervision.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Structural works & finishing</li>
-              <li><i class="fa fa-check-circle"></i> Building execution & site supervision</li>
-              <li><i class="fa fa-check-circle"></i> Commercial & institutional builds</li>
+              <li><i class="fa fa-check-circle"></i> Structural execution & finishing works</li>
+              <li><i class="fa fa-check-circle"></i> On-site coordination & safety management</li>
+              <li><i class="fa fa-check-circle"></i> Turnkey development execution</li>
             </ul>
           </div>
         </div>
 
-        <!-- Service 2 -->
+        <!-- Service 2: Civil Engineering -->
         <div class="service-card">
           <div class="service-img-wrapper">
             <span class="service-num">02</span>
@@ -722,14 +783,14 @@
             <h3>Civil Engineering</h3>
             <p>Essential infrastructure development and engineering works supporting civil development and municipal projects.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Earthworks & site preparation</li>
+              <li><i class="fa fa-check-circle"></i> Earthworks, dredging & site preparation</li>
               <li><i class="fa fa-check-circle"></i> Drainage systems & access roads</li>
-              <li><i class="fa fa-check-circle"></i> Infrastructure maintenance</li>
+              <li><i class="fa fa-check-circle"></i> General civil infrastructure projects</li>
             </ul>
           </div>
         </div>
 
-        <!-- Service 3 -->
+        <!-- Service 3: Building Construction -->
         <div class="service-card">
           <div class="service-img-wrapper">
             <span class="service-num">03</span>
@@ -737,16 +798,16 @@
           </div>
           <div class="service-body">
             <h3>Building Construction</h3>
-            <p>Comprehensive building execution from foundation to structural completion across housing estates and office facilities.</p>
+            <p>Comprehensive building execution from architectural design coordination through to structural topping out and finishing.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Residential estates & housing schemes</li>
-              <li><i class="fa fa-check-circle"></i> Mixed-use commercial developments</li>
-              <li><i class="fa fa-check-circle"></i> Strict quality compliance</li>
+              <li><i class="fa fa-check-circle"></i> Residential estates & private housing</li>
+              <li><i class="fa fa-check-circle"></i> Commercial office developments</li>
+              <li><i class="fa fa-check-circle"></i> Mixed-use urban complexes</li>
             </ul>
           </div>
         </div>
 
-        <!-- Service 4 -->
+        <!-- Service 4: Project Planning and Management -->
         <div class="service-card">
           <div class="service-img-wrapper">
             <span class="service-num">04</span>
@@ -754,16 +815,16 @@
           </div>
           <div class="service-body">
             <h3>Project Planning & Management</h3>
-            <p>Disciplined project coordination establishing clear execution strategies, timelines, resource allocation, and quality checks.</p>
+            <p>Disciplined project coordination establishing clear objectives, timelines, resource allocation, and milestone monitoring.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Budgeting and cost monitoring</li>
               <li><i class="fa fa-check-circle"></i> Program scheduling & milestone delivery</li>
-              <li><i class="fa fa-check-circle"></i> Consultant & contractor alignment</li>
+              <li><i class="fa fa-check-circle"></i> Budgeting and cost governance</li>
+              <li><i class="fa fa-check-circle"></i> Subcontractor coordination & QA</li>
             </ul>
           </div>
         </div>
 
-        <!-- Service 5 -->
+        <!-- Service 5: ICT & Office Equipment Supply -->
         <div class="service-card">
           <div class="service-img-wrapper">
             <span class="service-num">05</span>
@@ -771,16 +832,16 @@
           </div>
           <div class="service-body">
             <h3>ICT & Office Equipment Supply</h3>
-            <p>Procurement, setup, and maintenance of high-performance ICT infrastructure and modern office hardware.</p>
+            <p>Procurement, setup, and maintenance of high-performance ICT infrastructure and modern office hardware for public and private firms.</p>
             <ul class="service-list">
               <li><i class="fa fa-check-circle"></i> Computer hardware & peripherals</li>
               <li><i class="fa fa-check-circle"></i> Networking & communication systems</li>
-              <li><i class="fa fa-check-circle"></i> Office electronics & maintenance</li>
+              <li><i class="fa fa-check-circle"></i> Software solutions & maintenance</li>
             </ul>
           </div>
         </div>
 
-        <!-- Service 6 -->
+        <!-- Service 6: Property Management -->
         <div class="service-card">
           <div class="service-img-wrapper">
             <span class="service-num">06</span>
@@ -788,11 +849,11 @@
           </div>
           <div class="service-body">
             <h3>Property Management</h3>
-            <p>Protecting and appreciating the long-term value of commercial and residential assets through active management.</p>
+            <p>Protecting and improving the long-term value of commercial and residential assets through active maintenance and administration.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Property supervision & maintenance</li>
-              <li><i class="fa fa-check-circle"></i> Tenant & facility coordination</li>
-              <li><i class="fa fa-check-circle"></i> Asset performance monitoring</li>
+              <li><i class="fa fa-check-circle"></i> Property supervision & repairs</li>
+              <li><i class="fa fa-check-circle"></i> Tenant & facility management</li>
+              <li><i class="fa fa-check-circle"></i> Asset value performance monitoring</li>
             </ul>
           </div>
         </div>
@@ -800,58 +861,68 @@
     </div>
   </section>
 
-  <!-- Leadership Section -->
+  <!-- Leadership Section (Person Icons Instead of Letter Abbreviations) -->
   <section id="leadership">
     <div class="section-header">
-      <span class="section-subtitle">Leadership</span>
+      <span class="section-subtitle">Governance</span>
       <h2 class="section-title">Professional Management Team</h2>
-      <p class="section-desc">Guided by dedicated leaders committed to operational excellence and business integrity.</p>
+      <p class="section-desc">Led by dedicated professionals with multidisciplinary expertise across project execution and operations.</p>
     </div>
 
     <div class="team-grid">
+      <!-- Member 1 -->
       <div class="team-card">
-        <div class="team-avatar">MSI</div>
+        <div class="team-avatar-icon">
+          <i class="fa fa-user-tie"></i>
+        </div>
         <h4>MUHAMMAD SELIM IDRIS</h4>
         <div class="team-role">Managing Director / CEO</div>
-        <p>Oversees the overall strategic vision, corporate leadership, business growth, and executive performance.</p>
+        <p>Responsible for overall strategic direction, corporate leadership, business development, and executive performance.</p>
       </div>
 
+      <!-- Member 2 -->
       <div class="team-card">
-        <div class="team-avatar">ASZ</div>
+        <div class="team-avatar-icon">
+          <i class="fa fa-user-gear"></i>
+        </div>
         <h4>ABUBAKAR SADIQ ZAKARI</h4>
         <div class="team-role">Operations Director</div>
-        <p>Coordinates day-to-day company operations, project implementation, resource logistics, and performance benchmarks.</p>
+        <p>Responsible for coordinating operational systems, on-site project implementation, resource logistics, and performance.</p>
       </div>
 
+      <!-- Member 3 -->
       <div class="team-card">
-        <div class="team-avatar">MUU</div>
+        <div class="team-avatar-icon">
+          <i class="fa fa-user-check"></i>
+        </div>
         <h4>MUS'ABUKHAIR UMAR</h4>
         <div class="team-role">Project Manager</div>
-        <p>Responsible for engineering planning, project scheduling, on-site monitoring, compliance, and timely delivery.</p>
+        <p>Responsible for engineering schedules, project planning, quality control, site monitoring, and timely delivery.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact & Office Info Section -->
+  <!-- Contact & Office Section -->
   <section id="contact">
     <div class="contact-section">
       <div class="contact-layout">
         <div class="contact-details">
-          <h3>Get in Touch</h3>
+          <span class="section-subtitle">Connect With Us</span>
+          <h3>Get In Touch</h3>
           <p style="color: var(--text-muted); margin-bottom: 24px;">
-            Reach out to our office for general inquiries, project tenders, procurement contracts, or joint ventures.
+            Reach out to our Kaduna head office for project quotations, tender invitations, procurement partnerships, or joint ventures.
           </p>
 
           <ul class="contact-info-list">
             <li>
-              <i class="fa fa-map-marker-alt"></i>
+              <i class="fa fa-map-location-dot"></i>
               <div>
                 <strong>Head Office Address:</strong><br>
                 Shop 8, NUJ Secretariat, No. 6A Waff Road, Muhammadu Buhari Way, Kaduna State, Nigeria.
               </div>
             </li>
             <li>
-              <i class="fa fa-phone"></i>
+              <i class="fa fa-phone-volume"></i>
               <div>
                 <strong>Direct Phone Lines:</strong><br>
                 +234 903 388 8621<br>
@@ -859,28 +930,23 @@
               </div>
             </li>
             <li>
-              <i class="fa fa-envelope"></i>
+              <i class="fa fa-envelope-open-text"></i>
               <div>
-                <strong>Email Address:</strong><br>
+                <strong>Official Email:</strong><br>
                 muhsadglobalcontractsltd@gmail.com
               </div>
             </li>
           </ul>
         </div>
 
-        <div style="background: #f8faf8; padding: 30px; border-radius: 8px; border: 1px solid var(--border-color);">
-          <h4 style="margin-bottom: 15px; color: var(--primary-green);">Send a Quick Message</h4>
-          <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been received.'); this.reset();">
-            <div style="margin-bottom: 12px;">
-              <input type="text" placeholder="Your Name or Organization" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;">
-            </div>
-            <div style="margin-bottom: 12px;">
-              <input type="email" placeholder="Your Email Address" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;">
-            </div>
-            <div style="margin-bottom: 12px;">
-              <textarea placeholder="Tell us about your project requirements..." rows="4" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
-            </div>
-            <button type="submit" style="background: var(--primary-green); color: #fff; border: none; padding: 11px 22px; border-radius: 4px; font-weight: 700; cursor: pointer; width: 100%;">Submit Inquiry</button>
+        <div class="contact-form-box">
+          <h4>Send a Project Inquiry</h4>
+          <form onsubmit="event.preventDefault(); alert('Inquiry submitted successfully! A representative from MUHSAD will follow up shortly.'); this.reset();">
+            <input type="text" class="form-input" placeholder="Your Full Name or Company" required>
+            <input type="email" class="form-input" placeholder="Your Email Address" required>
+            <input type="text" class="form-input" placeholder="Service Needed (e.g. Construction, Supply, Civil Works)" required>
+            <textarea class="form-input" rows="4" placeholder="Brief overview of project or tender..." required style="resize: vertical;"></textarea>
+            <button type="submit" class="btn-submit">Submit Inquiry</button>
           </form>
         </div>
       </div>
@@ -893,7 +959,7 @@
       <div class="footer-col">
         <h5>MUHSAD GLOBAL CONTRACTS LTD</h5>
         <p style="margin-bottom: 12px;">
-          RC: 8623249 — Built on professional integrity, sound execution, and value creation across Nigeria's infrastructure and supply sectors.
+          RC: 8623249 — Built on professional discipline, sound engineering execution, and lasting value across Nigeria's construction and procurement sectors.
         </p>
         <p style="font-style: italic; color: var(--accent-gold);">"Wise contracting, lasting Value..."</p>
       </div>
@@ -901,21 +967,21 @@
       <div class="footer-col">
         <h5>Quick Links</h5>
         <ul>
-          <li><a href="#about">About Company</a></li>
+          <li><a href="#about">About Enterprise</a></li>
           <li><a href="#services">Core Capabilities</a></li>
-          <li><a href="#leadership">Management</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-          <li><a href="MUHSAD PROFILE 2026.pdf" download>Company Profile (PDF)</a></li>
+          <li><a href="#leadership">Management Team</a></li>
+          <li><a href="#credentials">Legal Compliance</a></li>
+          <li><a href="MUHSAD PROFILE 2026.pdf" download>Download Profile (PDF)</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>Core Sectors</h5>
+        <h5>Primary Operations</h5>
         <ul>
           <li>General Contracting</li>
-          <li>Civil Engineering</li>
+          <li>Civil & Road Works</li>
           <li>Building Construction</li>
-          <li>ICT & Office Supply</li>
+          <li>ICT Supply & Equipment</li>
           <li>Real Estate & Logistics</li>
         </ul>
       </div>
@@ -923,7 +989,7 @@
 
     <div class="footer-bottom">
       <div>&copy; 2026 MUHSAD GLOBAL CONTRACTS LIMITED. All Rights Reserved.</div>
-      <div>Registered in the Federal Republic of Nigeria (CAC)</div>
+      <div>Registered Private Company Limited by Shares (CAC Nigeria)</div>
     </div>
   </footer>
 
