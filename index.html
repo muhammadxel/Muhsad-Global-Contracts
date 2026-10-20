@@ -53,7 +53,7 @@
     .nav-container {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -63,10 +63,11 @@
       display: flex;
       align-items: center;
       text-decoration: none;
-      gap: 12px;
+      gap: 16px;
     }
+    /* Enlarged Logo Size */
     .brand-logo img {
-      height: 44px;
+      height: 60px;
       width: auto;
       object-fit: contain;
     }
@@ -74,19 +75,22 @@
       display: flex;
       flex-direction: column;
     }
+    /* Enlarged Company Name Font Size */
     .brand-name .name-en {
       font-family: 'Cinzel', serif;
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       color: #ffffff;
       line-height: 1.1;
     }
+    /* Enlarged Subtitle Font Size */
     .brand-name .name-sub {
-      font-size: 10.5px;
-      letter-spacing: 0.8px;
+      font-size: 13px;
+      letter-spacing: 1px;
       color: var(--accent-gold);
       font-weight: 700;
+      margin-top: 2px;
     }
 
     /* Mobile Hamburger Button */
@@ -95,7 +99,7 @@
       background: transparent;
       border: 1px solid var(--border-dark);
       color: var(--accent-gold);
-      font-size: 20px;
+      font-size: 22px;
       padding: 8px 12px;
       border-radius: 6px;
       cursor: pointer;
@@ -111,13 +115,13 @@
       display: flex;
       list-style: none;
       align-items: center;
-      gap: 22px;
+      gap: 24px;
     }
     .nav-links a {
       text-decoration: none;
       color: var(--text-muted);
       font-weight: 600;
-      font-size: 14.5px;
+      font-size: 15px;
       transition: color 0.2s ease;
     }
     .nav-links a:hover {
@@ -128,9 +132,9 @@
     .btn-download-profile {
       background: linear-gradient(135deg, var(--accent-gold), #a5813e);
       color: #070d09 !important;
-      padding: 9px 18px;
+      padding: 10px 20px;
       border-radius: 6px;
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
@@ -633,6 +637,15 @@
         text-align: center;
         gap: 6px;
       }
+      .brand-logo img {
+        height: 48px;
+      }
+      .brand-name .name-en {
+        font-size: 20px;
+      }
+      .brand-name .name-sub {
+        font-size: 11px;
+      }
     }
   </style>
 </head>
@@ -644,8 +657,8 @@
       <a href="#" class="brand-logo">
         <img src="muhsad logo.png" alt="MUHSAD Logo" onerror="this.style.display='none'">
         <div class="brand-name">
-          <span class="name-en">MUHSAD</span>[cite: 2]
-          <span class="name-sub">GLOBAL CONTRACTS LTD</span>[cite: 2]
+          <span class="name-en">MUHSAD</span>
+          <span class="name-sub">GLOBAL CONTRACTS LTD</span>
         </div>
       </a>
 
@@ -672,7 +685,7 @@
 
   <!-- Tagline Banner -->
   <div class="tagline-strip">
-    "Wise contracting, lasting Value..."[cite: 39]
+    "Wise contracting, lasting Value..."
   </div>
 
   <!-- Hero Section -->
@@ -683,7 +696,7 @@
       <p>
         MUHSAD GLOBAL CONTRACTS LIMITED provides dependable, practical, 
         and professionally managed solutions across infrastructure, commercial development, 
-        ICT supply, and property management in Nigeria[cite: 2, 4, 6].
+        ICT supply, and property management in Nigeria.
       </p>
       <div class="hero-buttons">
         <a href="#services" class="btn-gold">Explore Core Services</a>
@@ -700,12 +713,12 @@
         <h3>Delivering Projects that Meet Agreed Standards and Expectations</h3>
         <p>
           MUHSAD GLOBAL CONTRACTS LIMITED is an indigenous Nigerian limited liability company incorporated 
-          under the Companies and Allied Matters Act[cite: 4, 15]. We operate across civil engineering, building development, 
-          project planning, renovation, and logistics services[cite: 4].
+          under the Companies and Allied Matters Act. We operate across civil engineering, building development, 
+          project planning, renovation, and logistics services.
         </p>
         <p>
           Our operations are guided by a commitment to quality workmanship, strict cost discipline, 
-          responsible resource coordination, and sustainable value creation for private and public sector partners[cite: 4, 7].
+          responsible resource coordination, and sustainable value creation for private and public sector partners.
         </p>
       </div>
 
@@ -715,21 +728,21 @@
           <div class="cred-icon"><i class="fa fa-stamp"></i></div>
           <div class="cred-info">
             <h4>CAC Incorporation</h4>
-            <p>RC Number: 8623249 (Certified Limited Liability Company)[cite: 15]</p>
+            <p>RC Number: 8623249 (Certified Limited Liability Company)</p>
           </div>
         </div>
         <div class="cred-item">
           <div class="cred-icon"><i class="fa fa-file-invoice-dollar"></i></div>
           <div class="cred-info">
             <h4>Federal Tax Compliance (FIRS)</h4>
-            <p>TIN: 33361451-0001 | Tax Clearance TCC: 226107228270[cite: 15, 32]</p>
+            <p>TIN: 33361451-0001 | Tax Clearance TCC: 226107228270</p>
           </div>
         </div>
         <div class="cred-item">
           <div class="cred-icon"><i class="fa fa-shield-halved"></i></div>
           <div class="cred-info">
             <h4>SCUML / AML Certified</h4>
-            <p>Registration No: RN: SC 191605915 (Money Laundering Act 2022)[cite: 33]</p>
+            <p>Registration No: RN: SC 191605915 (Money Laundering Act 2022)</p>
           </div>
         </div>
       </div>
@@ -742,7 +755,7 @@
       <div class="section-header">
         <span class="section-subtitle">Integrated Capabilities</span>
         <h2 class="section-title">Our Core Services</h2>
-        <p class="section-desc">Practical, reliable, and integrated operational capabilities across construction, engineering, supply, and management[cite: 6].</p>
+        <p class="section-desc">Practical, reliable, and integrated operational capabilities across construction, engineering, supply, and management.</p>
       </div>
 
       <div class="services-grid">
@@ -754,11 +767,11 @@
           </div>
           <div class="service-body">
             <h3>Construction Services</h3>
-            <p>General construction solutions for residential, commercial, and institutional projects with complete site supervision[cite: 6].</p>
+            <p>General construction solutions for residential, commercial, and institutional projects with complete site supervision.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Structural execution & finishing works[cite: 6]</li>
-              <li><i class="fa fa-check-circle"></i> On-site coordination & safety management[cite: 6]</li>
-              <li><i class="fa fa-check-circle"></i> Turnkey development execution[cite: 27]</li>
+              <li><i class="fa fa-check-circle"></i> Structural execution & finishing works</li>
+              <li><i class="fa fa-check-circle"></i> On-site coordination & safety management</li>
+              <li><i class="fa fa-check-circle"></i> Turnkey development execution</li>
             </ul>
           </div>
         </div>
@@ -771,11 +784,11 @@
           </div>
           <div class="service-body">
             <h3>Civil Engineering</h3>
-            <p>Essential infrastructure development and engineering works supporting civil development and municipal projects[cite: 6].</p>
+            <p>Essential infrastructure development and engineering works supporting civil development and municipal projects.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Earthworks, dredging & site preparation[cite: 6]</li>
-              <li><i class="fa fa-check-circle"></i> Drainage systems & access roads[cite: 6]</li>
-              <li><i class="fa fa-check-circle"></i> General civil infrastructure projects[cite: 6]</li>
+              <li><i class="fa fa-check-circle"></i> Earthworks, dredging & site preparation</li>
+              <li><i class="fa fa-check-circle"></i> Drainage systems & access roads</li>
+              <li><i class="fa fa-check-circle"></i> General civil infrastructure projects</li>
             </ul>
           </div>
         </div>
@@ -788,11 +801,11 @@
           </div>
           <div class="service-body">
             <h3>Building Construction</h3>
-            <p>Comprehensive building execution from architectural design coordination through to structural topping out and finishing[cite: 6, 8].</p>
+            <p>Comprehensive building execution from architectural design coordination through to structural topping out and finishing.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Residential estates & private housing[cite: 6, 13]</li>
-              <li><i class="fa fa-check-circle"></i> Commercial office developments[cite: 13]</li>
-              <li><i class="fa fa-check-circle"></i> Mixed-use urban complexes[cite: 6]</li>
+              <li><i class="fa fa-check-circle"></i> Residential estates & private housing</li>
+              <li><i class="fa fa-check-circle"></i> Commercial office developments</li>
+              <li><i class="fa fa-check-circle"></i> Mixed-use urban complexes</li>
             </ul>
           </div>
         </div>
@@ -805,11 +818,11 @@
           </div>
           <div class="service-body">
             <h3>Project Planning & Management</h3>
-            <p>Disciplined project coordination establishing clear objectives, timelines, resource allocation, and milestone monitoring[cite: 6].</p>
+            <p>Disciplined project coordination establishing clear objectives, timelines, resource allocation, and milestone monitoring.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Program scheduling & milestone delivery[cite: 10, 11]</li>
-              <li><i class="fa fa-check-circle"></i> Budgeting and cost governance[cite: 4, 11]</li>
-              <li><i class="fa fa-check-circle"></i> Subcontractor coordination & QA[cite: 11]</li>
+              <li><i class="fa fa-check-circle"></i> Program scheduling & milestone delivery</li>
+              <li><i class="fa fa-check-circle"></i> Budgeting and cost governance</li>
+              <li><i class="fa fa-check-circle"></i> Subcontractor coordination & QA</li>
             </ul>
           </div>
         </div>
@@ -822,11 +835,11 @@
           </div>
           <div class="service-body">
             <h3>ICT & Office Equipment Supply</h3>
-            <p>Procurement, setup, and maintenance of high-performance ICT infrastructure and modern office hardware for public and private firms[cite: 6].</p>
+            <p>Procurement, setup, and maintenance of high-performance ICT infrastructure and modern office hardware for public and private firms.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Computer hardware & peripherals[cite: 6]</li>
-              <li><i class="fa fa-check-circle"></i> Networking & communication systems[cite: 6]</li>
-              <li><i class="fa fa-check-circle"></i> Software solutions & maintenance[cite: 6]</li>
+              <li><i class="fa fa-check-circle"></i> Computer hardware & peripherals</li>
+              <li><i class="fa fa-check-circle"></i> Networking & communication systems</li>
+              <li><i class="fa fa-check-circle"></i> Software solutions & maintenance</li>
             </ul>
           </div>
         </div>
@@ -839,11 +852,11 @@
           </div>
           <div class="service-body">
             <h3>Property Management</h3>
-            <p>Protecting and improving the long-term value of commercial and residential assets through active maintenance and administration[cite: 6].</p>
+            <p>Protecting and improving the long-term value of commercial and residential assets through active maintenance and administration.</p>
             <ul class="service-list">
-              <li><i class="fa fa-check-circle"></i> Property supervision & repairs[cite: 6]</li>
-              <li><i class="fa fa-check-circle"></i> Tenant & facility management[cite: 6]</li>
-              <li><i class="fa fa-check-circle"></i> Asset value performance monitoring[cite: 6]</li>
+              <li><i class="fa fa-check-circle"></i> Property supervision & repairs</li>
+              <li><i class="fa fa-check-circle"></i> Tenant & facility management</li>
+              <li><i class="fa fa-check-circle"></i> Asset value performance monitoring</li>
             </ul>
           </div>
         </div>
@@ -867,7 +880,7 @@
         </div>
         <h4>MUHAMMAD SELIM IDRIS</h4>
         <div class="team-role">Managing Director / CEO</div>
-        <p>Responsible for overall strategic direction, corporate leadership, business development, and executive performance[cite: 10].</p>
+        <p>Responsible for overall strategic direction, corporate leadership, business development, and executive performance.</p>
       </div>
 
       <!-- Member 2 -->
@@ -877,7 +890,7 @@
         </div>
         <h4>ABUBAKAR SADIQ ZAKARI</h4>
         <div class="team-role">Operations Director</div>
-        <p>Responsible for coordinating operational systems, on-site project implementation, resource logistics, and performance[cite: 10].</p>
+        <p>Responsible for coordinating operational systems, on-site project implementation, resource logistics, and performance.</p>
       </div>
 
       <!-- Member 3 -->
@@ -887,7 +900,7 @@
         </div>
         <h4>MUS'ABUKHAIR UMAR</h4>
         <div class="team-role">Project Manager</div>
-        <p>Responsible for engineering schedules, project planning, quality control, site monitoring, and timely delivery[cite: 10].</p>
+        <p>Responsible for engineering schedules, project planning, quality control, site monitoring, and timely delivery.</p>
       </div>
     </div>
   </section>
@@ -900,7 +913,7 @@
           <span class="section-subtitle">Connect With Us</span>
           <h3>Head Office & Inquiries</h3>
           <p style="color: var(--text-muted); margin-bottom: 24px;">
-            Reach out directly to our Kaduna corporate office for contract tenders, project partnerships, and procurement consultations[cite: 2].
+            Reach out directly to our Kaduna corporate office for contract tenders, project partnerships, and procurement consultations.
           </p>
 
           <ul class="contact-info-list">
@@ -908,21 +921,21 @@
               <i class="fa fa-map-location-dot"></i>
               <div>
                 <strong>Head Office Address:</strong><br>
-                Shop 8, NUJ Secretariat, No. 6A Waff Road, Muhammadu Buhari Way, Kaduna State, Nigeria[cite: 15].
+                Shop 8, NUJ Secretariat, No. 6A Waff Road, Muhammadu Buhari Way, Kaduna State, Nigeria.
               </div>
             </li>
             <li>
               <i class="fa fa-phone-volume"></i>
               <div>
                 <strong>Direct Phone Lines:</strong><br>
-                <a href="tel:+2349033888621">+234 903 388 8621</a> | <a href="tel:+2349078845696">+234 907 884 5696</a>[cite: 2]
+                <a href="tel:+2349033888621">+234 903 388 8621</a> | <a href="tel:+2349078845696">+234 907 884 5696</a>
               </div>
             </li>
             <li>
               <i class="fa fa-envelope-open-text"></i>
               <div>
                 <strong>Official Email:</strong><br>
-                <a href="mailto:muhsadglobalcontractsltd@gmail.com">muhsadglobalcontractsltd@gmail.com</a>[cite: 2]
+                <a href="mailto:muhsadglobalcontractsltd@gmail.com">muhsadglobalcontractsltd@gmail.com</a>
               </div>
             </li>
           </ul>
@@ -945,9 +958,9 @@
   <!-- Clean Footer -->
   <footer>
     <div class="footer-content">
-      <div>&copy; 2026 MUHSAD GLOBAL CONTRACTS LIMITED (RC: 8623249). All Rights Reserved.[cite: 2, 15]</div>
+      <div>&copy; 2026 MUHSAD GLOBAL CONTRACTS LIMITED (RC: 8623249). All Rights Reserved.</div>
       <div>
-        <a href="MUHSAD PROFILE 2026.pdf" download>Download Company Profile (PDF)</a>[cite: 1]
+        <a href="MUHSAD PROFILE 2026.pdf" download>Download Company Profile (PDF)</a>
       </div>
     </div>
   </footer>
